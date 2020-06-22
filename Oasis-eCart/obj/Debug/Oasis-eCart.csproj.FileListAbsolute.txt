@@ -17,3 +17,4 @@ C:\Users\SadaySarkar\Desktop\Repos\Oasis-eCart\obj\Debug\Oasis-eCart.csproj.Core
 C:\Users\SadaySarkar\Desktop\Repos\Oasis-eCart\obj\Debug\Oasis-eCart.csproj.CopyComplete
 C:\Users\SadaySarkar\Desktop\Repos\Oasis-eCart\obj\Debug\Oasis-eCart.dll
 C:\Users\SadaySarkar\Desktop\Repos\Oasis-eCart\obj\Debug\Oasis-eCart.pdb
+C:\Users\SadaySarkar\Desktop\Repos\Oasis-eCart\obj\Debug\Oasis-eCart.csprojAssemblyReference.cache
