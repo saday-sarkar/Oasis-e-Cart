@@ -13,7 +13,6 @@ C:\Users\SadaySarkar\Desktop\Repos\Oasis-eCart\bin\Debug\Oasis-eCart.pdb
 C:\Users\SadaySarkar\Desktop\Repos\Oasis-eCart\bin\Debug\nunit.framework.dll
 C:\Users\SadaySarkar\Desktop\Repos\Oasis-eCart\bin\Debug\nunit.framework.pdb
 C:\Users\SadaySarkar\Desktop\Repos\Oasis-eCart\bin\Debug\nunit.framework.xml
-C:\Users\SadaySarkar\Desktop\Repos\Oasis-eCart\obj\Debug\Oasis-eCart.csprojAssemblyReference.cache
 C:\Users\SadaySarkar\Desktop\Repos\Oasis-eCart\obj\Debug\Oasis-eCart.csproj.CoreCompileInputs.cache
 C:\Users\SadaySarkar\Desktop\Repos\Oasis-eCart\obj\Debug\Oasis-eCart.csproj.CopyComplete
 C:\Users\SadaySarkar\Desktop\Repos\Oasis-eCart\obj\Debug\Oasis-eCart.dll

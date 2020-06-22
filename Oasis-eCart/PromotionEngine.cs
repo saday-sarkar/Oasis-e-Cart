@@ -8,8 +8,17 @@ namespace Oasis_eCart
 {
     public class PromotionEngine
     {
-        public static int CheckOutCart (MyCart myCart)
+        private readonly SKURepositoryService SKURepoService;
+        private readonly PromotionRepositoryService promotionRepositoryService;
+        public PromotionEngine()
         {
+            SKURepoService = new SKURepositoryService();
+            promotionRepositoryService = new PromotionRepositoryService();
+        }
+        public int CheckOutCart (MyCart myCart)
+        {
+            var RepositoryItems = this.SKURepoService.GetStockKeepingUnits();
+            var Promotions = this.promotionRepositoryService.GetPromotions();
             return 0;
         }
     }

@@ -10,6 +10,7 @@ namespace Oasis_eCart
     [TestFixture]
     class PromotionEngineTest
     {
+        PromotionEngine promotionEngine = new PromotionEngine();
         [TestCase]
         public void CheckoutCartTestScenarioA()
         {
@@ -37,7 +38,7 @@ namespace Oasis_eCart
                     }
                 }
             };
-            Assert.AreEqual(PromotionEngine.CheckOutCart(myCart), 100);
+            Assert.AreEqual(promotionEngine.CheckOutCart(myCart), 100);
 
         }
         [TestCase]
@@ -67,7 +68,7 @@ namespace Oasis_eCart
                     }
                 }
             };
-            Assert.AreEqual(PromotionEngine.CheckOutCart(myCart), 370);
+            Assert.AreEqual(promotionEngine.CheckOutCart(myCart), 370);
 
         }
         [TestCase]
@@ -103,7 +104,7 @@ namespace Oasis_eCart
                     }
                 }
             };
-            Assert.AreEqual(PromotionEngine.CheckOutCart(myCart), 280);
+            Assert.AreEqual(promotionEngine.CheckOutCart(myCart), 280);
         }
     }
 }

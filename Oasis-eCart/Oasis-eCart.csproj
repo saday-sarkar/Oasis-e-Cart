@@ -47,6 +47,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataModule\PromotionRepository.cs" />
+    <Compile Include="DataModule\PromotionRepositoryService.cs" />
+    <Compile Include="DataModule\SKURepository.cs" />
+    <Compile Include="DataModule\SKURepositoryService.cs" />
     <Compile Include="PromotionEngine.cs" />
     <Compile Include="NUnitTestCases\PromotionEngineTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -55,9 +59,7 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="DataModule\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
