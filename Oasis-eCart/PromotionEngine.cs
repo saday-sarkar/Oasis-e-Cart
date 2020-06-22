@@ -25,32 +25,39 @@ namespace Oasis_eCart
         {
             int Result = 0;
             //Promotion Type 1 (Promo 1 and 2)
-            foreach (var promo in Promotions.Where(y => y.Type == 1).ToList())
+            try
             {
-                while (myCart.MyCartItems.Where(x => x.MyCartItemID == promo.SKUID1).FirstOrDefault()?.MyCartItemUnit >= promo.SKUUnit)
+                foreach (var promo in Promotions.Where(y => y.Type == 1).ToList())
                 {
-                    Result += promo.Price;
-                    myCart.MyCartItems.Where(x => x.MyCartItemID == promo.SKUID1).FirstOrDefault().MyCartItemUnit -= promo.SKUUnit;
+                    while (myCart.MyCartItems.Where(x => x.MyCartItemID == promo.SKUID1).FirstOrDefault()?.MyCartItemUnit >= promo.SKUUnit)
+                    {
+                        Result += promo.Price;
+                        myCart.MyCartItems.Where(x => x.MyCartItemID == promo.SKUID1).FirstOrDefault().MyCartItemUnit -= promo.SKUUnit;
+                    }
+                }
+
+                //Promotion Type 2 ( Promotion 3 )
+                foreach (var promo in Promotions.Where(y => y.Type == 2).ToList())
+                {
+                    while (myCart.MyCartItems.Where(x => x.MyCartItemID == promo.SKUID1).FirstOrDefault()?.MyCartItemUnit >= 1 && myCart.MyCartItems.Where(x => x.MyCartItemID == promo.SKUID2).FirstOrDefault()?.MyCartItemUnit >= 1)
+                    {
+                        Result += promo.Price;
+                        myCart.MyCartItems.Where(x => x.MyCartItemID == promo.SKUID1).FirstOrDefault().MyCartItemUnit -= 1;
+                        myCart.MyCartItems.Where(x => x.MyCartItemID == promo.SKUID2).FirstOrDefault().MyCartItemUnit -= 1;
+                    }
+                }
+
+                //With No Promotion
+                while (myCart.MyCartItems.Count() > 0)
+                {
+                    var item = myCart.MyCartItems.FirstOrDefault();
+                    Result += (RepositoryItems.Where(z => z.SKUID == item.MyCartItemID).FirstOrDefault().SKUUnitPrice * item.MyCartItemUnit);
+                    myCart.MyCartItems.Remove(item);
                 }
             }
-
-            //Promotion Type 2 ( Promotion 3 )
-            foreach (var promo in Promotions.Where(y => y.Type == 2).ToList())
+            catch( Exception ex)
             {
-                while (myCart.MyCartItems.Where(x => x.MyCartItemID == promo.SKUID1).FirstOrDefault()?.MyCartItemUnit >= 1 && myCart.MyCartItems.Where(x => x.MyCartItemID == promo.SKUID2).FirstOrDefault()?.MyCartItemUnit >= 1)
-                {
-                    Result += promo.Price;
-                    myCart.MyCartItems.Where(x => x.MyCartItemID == promo.SKUID1).FirstOrDefault().MyCartItemUnit -= 1;
-                    myCart.MyCartItems.Where(x => x.MyCartItemID == promo.SKUID2).FirstOrDefault().MyCartItemUnit -= 1;
-                }
-            }
-
-            //With No Promotion
-            while (myCart.MyCartItems.Count() > 0)
-            {
-                var item = myCart.MyCartItems.FirstOrDefault();
-                Result += (RepositoryItems.Where(z => z.SKUID == item.MyCartItemID).FirstOrDefault().SKUUnitPrice * item.MyCartItemUnit);
-                myCart.MyCartItems.Remove(item);
+                throw new Exception("Promotion failed to apply : " + ex.Message);
             }
             return Result;
         }
