@@ -48,12 +48,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="PromotionEngine.cs" />
-    <Compile Include="PromotionEngineTest.cs" />
+    <Compile Include="NUnitTestCases\PromotionEngineTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UtilityModels.cs" />
+    <Compile Include="Models\UtilityModels.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DataModule\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
